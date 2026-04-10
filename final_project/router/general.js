@@ -114,5 +114,13 @@ async function getBookByIsbn(){
     console.log(error.message)
   }
 }
+async function getBookByAuthor(){
+  try{
+    const response = await axios.get('http://localhost:5000/author/Samuel%Beckett')
+    console.log(response.data)
+  }catch(error){
+  console.log(error.message)}
+}
 getBookByIsbn();
 getAllBooks();
+getBookByAuthor();
