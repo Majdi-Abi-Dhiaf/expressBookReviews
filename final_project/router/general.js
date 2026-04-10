@@ -106,4 +106,13 @@ async function getAllBooks() {
   }
 }
 
+async function getBookByIsbn(){
+  try{
+    const response = await axios.get('http://localhost:5000/isbn/1')
+    console.log(response.data)
+  }catch(error){
+    console.log(error.message)
+  }
+}
+getBookByIsbn();
 getAllBooks();
