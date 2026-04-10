@@ -116,7 +116,14 @@ async function getBookByIsbn(){
 }
 async function getBookByAuthor(){
   try{
-    const response = await axios.get('http://localhost:5000/author/Samuel%Beckett')
+    const response = await axios.get('http://localhost:5000/author/Samuel%20Beckett')
+    console.log(response.data)
+  }catch(error){
+  console.log(error.message)}
+}
+async function getBookByTitle(){
+  try{
+    const response = await axios.get('http://localhost:5000/title/Fairy%20tales')
     console.log(response.data)
   }catch(error){
   console.log(error.message)}
@@ -124,3 +131,4 @@ async function getBookByAuthor(){
 getBookByIsbn();
 getAllBooks();
 getBookByAuthor();
+getBookByTitle()
